@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="testing-test-suite.xml" />
+	<munit:test name="testing-test-suite-testingFlowTest" description="Test" doc:id="312bc95f-2203-4824-98d5-cca4ef3db100" >
+		<munit:execution >
+			<flow-ref doc:name="testingFlow" doc:id="b8154b79-6130-444e-b86a-7fc0fcdae361" name="testingFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="a2772da4-cb98-4491-8bb6-1b2ec3f09ff3" expression="#[payload]" is='#[MunitTools::equalTo("blah234")]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

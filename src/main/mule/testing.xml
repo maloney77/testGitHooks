@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b92f132b-c6a8-4d2a-9a7a-5a602e947b11" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testingFlow" doc:id="45ebfe69-05a7-4368-a53c-477fbf382fcd" >
+		<http:listener doc:name="Listener" doc:id="4e6d8ff1-088f-48bb-9963-71cf651c765a" config-ref="HTTP_Listener_config" path="/blah"/>
+		<set-variable value="#[[]]" doc:name="Set Variable" doc:id="50801c59-eb9d-4c3e-93d4-e9dea8a7b23e" variableName="blah"/>
+		<set-variable value="#[[1,2,3]]" doc:name="Set Variable" doc:id="bf8cdc39-4793-4b34-ae32-0673936b879f" variableName="numbers"/>
+		<set-payload value="blah" doc:name="Set Payload" doc:id="776723e4-a319-4b7b-8bb4-5670cbdb2ccf" />
+	</flow>
+</mule>

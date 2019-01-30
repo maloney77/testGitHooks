@@ -1,0 +1,10 @@
+{
+  "sampleData": {
+    "abc82d0e-ee2e-402e-8d59-c795fa15506b": {
+      "payload": "sample_data/defaultvoidtype.dwl"
+    },
+    "e986ebd3-3a76-495d-aea1-a63edb36b4a0": {
+      "payload": "sample_data/unknown.dwl"
+    }
+  }
+}
